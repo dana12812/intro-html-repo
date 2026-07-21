@@ -3,30 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <title>HTML & CSS Cheat Sheet</title>
+    <!-- =======================================================
+        INTERNAL CSS
+        CSS is written inside the <style> tag.
+        Shortcut:
+        Type "style" then press Enter (or use Emmet).
+    ======================================================== -->
+    <style>
+        /* ==========================================
+           UNIVERSAL SELECTOR
+           Selects EVERYTHING.
+        ========================================== */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        /* ==========================================
+           CSS VARIABLES
+        ========================================== */
+        :root{
+            --primary:#2563eb;
+            --secondary:#16a34a;
+            --background:#f4f4f4;
+            --dark:#333;
+            --white:white;
+        }
+        /* ==========================================
+           BODY
+        ========================================== */
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:var(--background);
+            color:var(--dark);
+            line-height:1.6;
+            padding:20px;
+        }
+        /* ==========================================
+           ELEMENT SELECTOR
+        ========================================== */
+        h1{
+            color:var(--primary);
+            margin-bottom:15px;
+        }
+        h2{
+            margin-top:30px;
+            color:darkred;
+        }
+        p{
+            margin:10px 0;
+        }
+        /* ==========================================
+           CLASS SELECTOR
+        ========================================== */
+        .card{
+            background:white;
+            padding:20px;
+            margin:20px 0;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.15);
+        }
+        /* ==========================================
+           ID SELECTOR
+        ========================================== */
+        #special{
+            color:purple;
+            font-weight:bold;
+        }
+        /* ==========================================
+           LINK
+        ========================================== */
+        a{
+            color:blue;
+            text-decoration:none;
+        }
+        a:hover{
+            color:red;
+        }
+        /* ==========================================
+           BUTTON
+        ========================================== */
+        button{
+            background:var(--primary);
+            color:white;
+            border:none;
+            padding:10px 18px;
+            border-radius:6px;
+            cursor:pointer;
+            transition:.3s;
+        }
+        button:hover{
+            background:black;
+            transform:scale(1.05);
+        }
+        button:active{
+            transform:scale(.95);
+        }
+        /* ==========================================
+           INPUTS
+        ========================================== */
+        input,
+        textarea,
+        select{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid gray;
+            border-radius:5px;
+        }
+        input:focus,
+        textarea:focus{
+            border:2px solid blue;
+            outline:none;
+        }
+        /* ==========================================
+           LIST
+        ========================================== */
+        ul{
+            margin-left:20px;
+        }
+        /* ==========================================
+           TABLE
+        ========================================== */
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        table,th,td{
+            border:1px solid black;
+        }
+        th{
+            background:#ddd;
+        }
+        th,td{
+            padding:10px;
+            text-align:center;
+        }
+        /* ==========================================
+           BOX MODEL
+        ========================================== */
+        .box{
+            width:250px;
+            height:120px;
+            background:orange;
+            padding:20px;
+            margin:20px;
+            border:5px solid black;
+        }
+        /* ==========================================
+           FLEXBOX
+        ========================================== */
+        .flex-container{
+            display:flex;
+            gap:20px;
+            justify-content:space-around;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+        .flex-item{
+            width:120px;
+            height:120px;
+            background:skyblue;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-radius:10px;
+        }
+        /* ==========================================
+           GRID
+        ========================================== */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:15px;
+        }
+        .grid div{
+            background:lightgreen;
+            padding:20px;
+            text-align:center;
+        }
+        /* ==========================================
+           POSITION
+        ========================================== */
+        .relative{
+            position:relative;
+            left:20px;
+        }
+        /* ==========================================
+           OVERFLOW
+        ========================================== */
+        .overflow{
+            width:250px;
+            height:100px;
+            overflow:auto;
+            border:1px solid black;
+            padding:10px;
+        }
+        /* ==========================================
+           MEDIA QUERY
+        ========================================== */
+        @media(max-width:700px){
+            body{
+                background:#ddd;
+            }
+            .grid{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1 id="title">title</h1>
-  <div>
-    <h2>The big idea</h2>
-    <p>HTML lets us structure content!</p>
-    <p>Elements can:</p>
-    <ul>
-      <li>Have attributes</li>
-      <li>Be nested in other elements</li>
-    </ul>
-  </div>
-  <p>Have a <span>great</span> day!</p>
-  <a href="https://www.google.com">Google</a>
-  <input type="text" placeholder="Enter your name">
-  <button>Click me!</button>
-ghhgghghhgghghhgh
-
-git init 
-git add .
-git commit -m "first commit"
-git status
-git diff
-
+<!-- ===============================================
+SHORTCUTS
+! + TAB
+Creates HTML Boilerplate
+Ctrl + /
+Comment
+Alt + Shift + Down
+Duplicate line
+Alt + Up / Down
+Move line
+Shift + Alt + F
+Format Document
+Ctrl + Space
+Suggestions
+=============================================== -->
+<header>
+<h1>HTML & CSS Cheat Sheet</h1>
+<p>This page contains common HTML elements and CSS concepts.</p>
+</header>
+<hr>
+<section class="card">
+<h2>Headings</h2>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+</section>
+<section class="card">
+<h2>Paragraph</h2>
+<p>This is a paragraph.</p>
+<p id="special">
+This paragraph uses an ID selector.
+</p>
+</section>
+<section class="card">
+<h2>Links</h2>
+<a href="#">Click Me</a>
+</section>
+<section class="card">
+<h2>Lists</h2>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+</ul>
+<ol>
+<li>Wake up</li>
+<li>Study</li>
+<li>Sleep</li>
+</ol>
+</section>
+<section class="card">
+<h2>Image</h2>
+<img
+src="https://picsum.photos/250"
+alt="Random Image">
+</section>
+<section class="card">
+<h2>Buttons</h2>
+<button>Submit</button>
+<button>Cancel</button>
+</section>
+<section class="card">
+<h2>Form</h2>
+<form>
+<label>Name</label>
+<input type="text" placeholder="Enter Name">
+<label>Email</label>
+<input type="email">
+<label>Password</label>
+<input type="password">
+<label>Number</label>
+<input type="number">
+<label>Date</label>
+<input type="date">
+<label>Color</label>
+<input type="color">
+<label>Range</label>
+<input type="range">
+<label>File</label>
+<input type="file">
+<label>Checkbox</label>
+<input type="checkbox"> HTML
+<input type="checkbox"> CSS
+<br><br>
+<label>Radio Buttons</label>
+<br>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<br><br>
+<label>Dropdown</label>
+<select>
+<option>HTML</option>
+<option>CSS</option>
+<option>JavaScript</option>
+</select>
+<label>Textarea</label>
+<textarea rows="4"></textarea>
+<input type="submit">
+<input type="reset">
+</form>
+</section>
+<section class="card">
+<h2>Table</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>City</th>
+</tr>
+<tr>
+<td>Dana</td>
+<td>20</td>
+<td>Bahrain</td>
+</tr>
+</table>
+</section>
+<section class="card">
+<h2>Box Model</h2>
+<div class="box">
+Content
+</div>
+<!--
+Inspect this box in DevTools.
+Content
+Padding
+Border
+Margin
+-->
+</section>
+<section class="card">
+<h2>Flexbox</h2>
+<div class="flex-container">
+<div class="flex-item">1</div>
+<div class="flex-item">2</div>
+<div class="flex-item">3</div>
+</div>
+</section>
+<section class="card">
+<h2>Grid</h2>
+<div class="grid">
+<div>A</div>
+<div>B</div>
+<div>C</div>
+<div>D</div>
+<div>E</div>
+<div>F</div>
+</div>
+</section>
+<section class="card">
+<h2>Overflow</h2>
+<div class="overflow">
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</div>
+</section>
+<section class="card">
+<h2>Semantic HTML</h2>
+<header>Header</header>
+<nav>Navigation</nav>
+<main>Main Content</main>
+<section>Section</section>
+<article>Article</article>
+<aside>Sidebar</aside>
+<footer>Footer</footer>
+</section>
+<footer>
+<hr>
+<p>Created as an HTML & CSS revision sheet.</p>
+</footer>
 </body>
 </html>
